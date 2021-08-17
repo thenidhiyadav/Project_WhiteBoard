@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My WhiteBoard</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./css/sticky.css"> -->
+    <link rel="stylesheet" href="./css/image.css">
+    <link rel="stylesheet" href="./css/queries.css">
+</head>
+
+<body>
+    <!-- canvas Tag -->
+    <div class="combined">
+        <div class="toolBar">
+            <div class="tool-panel add-animation">
+
+                <!-- pencil div starts-->
+                <div class="tool active">
+                    <img src="NewIcons/Black_Pencil.svg" class="tool-img " id="pencil-img" alt=""
+                        onclick="handleToolChange('pencil')">
+
+                    <div class="tool-options pencil">
+
+                        <!-- to change width of the pencil -->
+                        <div class="pencil-size">
+                            <input type="range" id="pen-size" min="5" max="30" value="5"
+                                onchange="sizeChange(this.value)">
+                        </div>
+
+
+                        <!-- to change colors of the pencil -->
+                        <div class="pencil-color">
+                            <div class="colors red" onclick="handleColorChange('red')"></div>
+                            <div class="colors green" onclick="handleColorChange('#55efc4')"></div>
+                            <div class="colors blue" onclick="handleColorChange('blue')"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- pencil div ends-->
+
+
+                <div class="tool eraser">
+                    <img src="NewIcons/Eraser.svg" alt="" class="tool-img" id="eraser-img"
+                        onclick="handleToolChange('eraser')">
+                    <div class="tool-options eraser">
+                        <div class="eraser-size">
+                            <input type="range" id="eraser-size" min="5" max=30 onchange="sizeChange(this.value)">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tool">
+                    <img src="./NewIcons/Download.svg" alt="" class="tool-img download-tool">
+                </div>
+                <div class="tool">
+                    <img src="./NewIcons/Undo.svg" alt="" class="tool-img undo">
+                </div>
+                <div class="tool">
+                    <img src="./NewIcons/Redo.svg" alt="" class="tool-img redo">
+                </div>
+            </div>
+        </div>
+        
+        <!-- notes dom create -->
+        <canvas class="board">
+        </canvas>
+    </div>
+    <script src="./js/utilities/common.js"></script>
+    <script src="./js/tool.js"></script>
+    <script src="./js/image.js"></script>
+    <script src="./js/draw.js"></script>
+</body>
+
+</html>
